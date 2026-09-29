@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Laboratorio de Botánica: Crecimiento de Tulipán 3D</title>
+  <link rel="stylesheet" href="style.css">
+
+  <script type="importmap">
+    {
+      "imports": {
+        "three": "https://unpkg.com/three@0.160.0/build/three.module.js",
+        "three/addons/": "https://unpkg.com/three@0.160.0/examples/jsm/"
+      }
+    }
+  </script>
+</head>
+<body>
+
+  <!-- ENCABEZADO SUPERIOR -->
+  <div id="titulo">
+    <h1>Laboratorio de Botánica: Crecimiento de Tulipan 3D</h1>
+    <p>Simulador ecológico interactivo con Three.js</p>
+  </div>
+
+  <!-- PANEL DE SELECCIÓN E INFORMACIÓN (ARRIBA A LA DERECHA) -->
+  <div id="info">
+    <h3>Selecciona una parte</h3>
+    <p id="info-desc">Haz clic sobre cualquier parte de la planta o maceta para ver sus propiedades botánicas y estado de crecimiento.</p>
+    <div id="info-detalles" style="display: none;">
+      <p><b>Nombre:</b> <span id="info-nombre">-</span></p>
+      <p><b>Tipo de Geometría:</b> <span id="info-geom">-</span></p>
+      <p><b>Estado de Crecimiento:</b> <span id="info-pct">0%</span></p>
+    </div>
+  </div>
+
+  <!-- PANEL DE CONTROL FLOTANTE (ABAJO A LA IZQUIERDA) -->
+  <div id="controles">
+    <h3>Panel de Control</h3>
+
+    <!-- BARRA DE PROGRESO DE CRECIMIENTO GENERAL -->
+    <div class="control-group">
+      <label>Progreso de Crecimiento: <span id="valProgreso">0%</span></label>
+      <div class="progress-bar-container">
+        <div id="progressBar" class="progress-bar-fill"></div>
+      </div>
+    </div>
+
+    <div class="control-group">
+      <label for="velocidadCrecimiento">Velocidad de Crecimiento: <span id="valVelocidad">1.0x</span></label>
+      <input type="range" id="velocidadCrecimiento" min="0.1" max="3" step="0.1" value="1">
+    </div>
+
+    <div class="control-group">
+      <label for="intensidadViento">Intensidad del Viento: <span id="valViento">1.0</span></label>
+      <input type="range" id="intensidadViento" min="0" max="3" step="0.1" value="1">
+    </div>
+
+    <div class="control-group">
+      <label for="intensidadLuz">Intensidad de Luz: <span id="valLuz">1.5</span></label>
+      <input type="range" id="intensidadLuz" min="0.2" max="3" step="0.1" value="1.5">
+    </div>
+
+    <div class="button-grid">
+      <button id="btnReiniciarCrecimiento">Reiniciar Crecimiento</button>
+      <button id="btnPausarAnimacion">Detener Animación</button>
+      <button id="btnColorHojas">Cambiar Color Hojas</button>
+      <button id="btnColorPetalos">Cambiar Color Petalos</button>
+      <button id="btnOcultarHojas">Ocultar Hojas</button>
+      <button id="btnReiniciarCamara">Restablecer Camara</button>
+    </div>
+  </div>
+
+  <script type="module" src="main.js"></script>
+</body>
+</html>
